@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="addConsignment" type="tns:addConsignment"/>
+
+<xs:element name="addEmployee" type="tns:addEmployee"/>
+
+<xs:element name="addPortion" type="tns:addPortion"/>
+
+<xs:element name="getConsignment" type="tns:getConsignment"/>
+
+<xs:element name="getConsignmentResponse" type="tns:getConsignmentResponse"/>
+
+<xs:element name="getEmployee" type="tns:getEmployee"/>
+
+<xs:element name="getEmployeeResponse" type="tns:getEmployeeResponse"/>
+
+<xs:element name="getPortion" type="tns:getPortion"/>
+
+<xs:element name="getPortionResponse" type="tns:getPortionResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="listaAlunos" type="tns:listaAlunos"/>
+
+<xs:element name="listaAlunosResponse" type="tns:listaAlunosResponse"/>
+
+<xs:element name="payInstallment" type="tns:payInstallment"/>
+
+<xs:complexType name="addEmployee">
+<xs:sequence>
+<xs:element name="e" type="tns:employee" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employee">
+<xs:sequence>
+<xs:element name="consignable_margin" type="xs:double"/>
+<xs:element name="gross_income" type="xs:float"/>
+<xs:element name="last_name" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="office" type="xs:string" minOccurs="0"/>
+<xs:element name="registration" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addConsignment">
+<xs:sequence>
+<xs:element name="c" type="tns:consignment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consignment">
+<xs:sequence>
+<xs:element name="bank" type="xs:string" minOccurs="0"/>
+<xs:element name="contractNumber" type="xs:int"/>
+<xs:element name="day" type="xs:int"/>
+<xs:element name="month" type="xs:int"/>
+<xs:element name="plots" type="xs:int"/>
+<xs:element name="registration" type="xs:int"/>
+<xs:element name="valueConsignment" type="xs:float"/>
+<xs:element name="year" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="payInstallment">
+<xs:sequence>
+<xs:element name="portion" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPortion">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPortionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:portion" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="portion">
+<xs:sequence>
+<xs:element name="contractNumber" type="xs:int"/>
+<xs:element name="day" type="xs:int"/>
+<xs:element name="month" type="xs:int"/>
+<xs:element name="portionValue" type="xs:float"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPortion">
+<xs:sequence>
+<xs:element name="p" type="tns:portion" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaAlunos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaAlunosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEmployee">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmployeeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:employee" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getConsignment">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getConsignmentResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:consignment" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
